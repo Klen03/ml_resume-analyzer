@@ -1,4 +1,4 @@
-# CS506-project
+# CS506 Project
 ## Project description:
 ## Goals:
 ## Data:
