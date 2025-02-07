@@ -6,7 +6,11 @@ Resume Analyzer is a machine learning-based system that evaluates resumes, provi
 By using **Natural Language Processing (NLP), machine learning models, and statistical analysis**, the project aims to create an actionable and ethical tool that helps job seekers **optimize their resumes** while also addressing **potential biases in the hiring process.**
 
 ## Goals:
+- Develop a resume analysis tool that evaluates how well an applicant aligns with specific job listings
+- Predict job offer likelihood
+- Analyze potential bias in hiring decisions
+  
 ## Data:
-## Data model:
+## Data Model:
 ## Data Visualization: 
-## test plan: 
+## Testing: 
