@@ -20,7 +20,7 @@ By using **Natural Language Processing (NLP), machine learning models, and stati
 
 ## Data Model:
 - BERT embedding to extract meaningful text features from resumes and job descriptions
-- Logistic regression job offer prediction to classify resumes as “likely to get an offer” vs. “unlikely)
+- Logistic regression (job offer prediction to classify resumes as “likely to get an offer” vs. “unlikely)
 ## Data Visualization: 
 - Radar chart  to visualize strengths and weaknesses of resumes based on key metrics such as skill match, experience, education, etc.
 - Scatter plots to show feature importance vs. job offer probability
