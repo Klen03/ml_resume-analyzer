@@ -1,6 +1,6 @@
 # CS506 Project - Resume Analyzer
 
-We aim to build a tool that evaluates resumes and provides data-driven insights on how well they align with specific job descriptions. Instead of directly predicting job offer likelihood, our tool will analyze hiring data to identify the most influential factors affecting hiring decisions. This will offer quantifiable, evidence-based feedback beyond what existing AI resume evaluators provide.
+We aim to build a tool that evaluates resumes and provides data-driven insights on how well they align with specific job descriptions. Instead of directly predicting job offer likelihood, our tool will analyze hiring data to identify the most influential factors affecting hiring decisions. Unlike other resume scoring tools, our system draws from real hiring outcome data to identify which features—like skills, education, certifications—actually correlate with success in specific fields. This provides applicants with quantifiable and context-aware recommendations instead of generic keyword tips.
 
 ## Project description:
 
@@ -43,7 +43,7 @@ This approach makes our project uniquely valuable by focusing on data-driven ins
 - BERT embedding to extract meaningful text features from resumes and job descriptions
 - Logistic regression (job offer prediction to classify resumes as “likely to get an offer” vs. “unlikely)
 ## Data Visualization: 
-- Radar chart  to visualize strengths and weaknesses of resumes based on key metrics such as skill match, experience, education, etc.
+- Radar chart to visualize strengths and weaknesses of resumes based on key metrics such as skill match, experience, education, etc.
 - Scatter plots to show feature importance vs. job offer probability
 ## Testing: 
 - Unit test to verify correct feature extraction
