@@ -20,4 +20,5 @@ df["Gender"] = df["Gender"].map(gender_map)
 df["EducationLevel"] = df["EducationLevel"].map(education_map)
 df["RecruitmentStrategy"] = df["RecruitmentStrategy"].map(strategy_map)
 
+ # Save clean data to processed_data file
 df.to_csv("datasets/processed_data/cleaned_recruitment_data.csv", index=False)
