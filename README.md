@@ -1,14 +1,13 @@
-# CS506 Project - Resume Analyzer
-
-We aim to build a tool that evaluates resumes and provides data-driven insights on how well they align with specific job descriptions. Instead of directly predicting job offer likelihood, our tool will analyze hiring data to identify the most influential factors affecting hiring decisions. Unlike other resume scoring tools, our system draws from real hiring outcome data to identify which features—like skills, education, certifications—actually correlate with success in specific fields. This provides applicants with quantifiable and context-aware recommendations instead of generic keyword tips.
+# CS506 Project - Hiring Intelligence Dashboard
+Our project reimagines resume analysis by shifting focus from vague AI suggestions to data-driven insights based on real hiring outcomes. Rather than trying to predict job offers directly, we analyze which resume traits most strongly correlate with success—using actual recruitment data, SHAP interpretability, and behavioral scoring. Our tool empowers job seekers not just with feedback, but with explanations and comparisons, allowing them to simulate changes, view trait benchmarks against successful applicants, and identify potential bias or inequality in the hiring process. We aim to move beyond generative feedback and toward transparent, evidence-backed recommendations. This provides applicants with quantifiable and context-aware recommendations instead of generic keyword tips.
 
 ## Project description:
 
-By using **Natural Language Processing (NLP), machine learning models, and statistical analysis**, the project aims to create an actionable and ethical tool that helps job seekers **optimize their resumes** while also addressing **potential biases in the hiring process.**
-
+By using **Natural Language Processing (NLP), machine learning models, and statistical analysis**, the project aims to create an actionable and ethical tool that helps job seekers **optimize their resumes** while also understanding **what actually matters in hiring decisions** and addressing **potential biases in the hiring process.**
 ## Goals:
 - Develop a resume analysis tool that evaluates how well an applicant aligns with specific job listings
-- Predict job offer likelihood
+- Visualizes which factors (e.g., experience, personality score, education level) most influence outcomes in your dataset
+- Lets users simulate “what-if” scenarios (e.g., what happens if experience increases?)
 - Analyze potential bias in hiring decisions
 ## Key Features and Innovations
 - Resume Score & Factor Analysis
@@ -17,7 +16,7 @@ By using **Natural Language Processing (NLP), machine learning models, and stati
   - Offer percentile rankings based on hiring outcome data (e.g., "Your skill match is in the top 25% for this job").
 ## Hiring Outcome Analysis
 - Analyze a dataset of real hiring outcomes to determine which resume factors influence success.
-- Use SHAP values and feature importance rankings to provide actionable insights.
+- Use SHAP values to see if gender or education unfairly influences hiring decisions
 - Example insight: "Resumes with X certification have a 30% higher chance of getting an interview for software engineering roles."
 ## Data Collection Strategy
 - Resumes: Scrape public resume datasets (e.g., Kaggle, Resume.io, OpenResume) and collect voluntary submissions from students/professionals.
