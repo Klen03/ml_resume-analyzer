@@ -1,4 +1,5 @@
 import pandas as pd
+import re
 
 # Cleaning recruitment_data.csv
 df = pd.read_csv("datasets/raw_data/recruitment_data.csv")
@@ -55,3 +56,64 @@ print(df.head())
 
 # Step 7: Save cleaned version
 df.to_csv("datasets/processed_data/cleaned_job_data.csv", index=False)
+
+
+def clean_text(text):
+    """Fix encoding issues and normalize whitespace."""
+    text = text.encode('latin1').decode('utf-8', errors='ignore')
+    text = re.sub(r'\s+', ' ', text)  # Normalize whitespace
+    return text.strip()
+
+def extract_section(pattern, text):
+    """Extracts section based on a pattern."""
+    if not isinstance(text, str):
+        return "Not specified"
+    match = re.search(pattern, text, re.IGNORECASE)
+    if match:
+        return match.group(1).strip()
+    return "Not specified"
+
+# Prepare cleaned data storage
+cleaned_data = []
+
+df = pd.read_csv("datasets/raw_data/UpdatedResumeDataSet.csv", encoding='utf-8-sig')
+
+df['Resume'] = df['Resume'].fillna('').astype(str)
+
+# Process each resume
+for _, row in df.iterrows():
+    category = row['Category']
+    resume = row['Resume']
+
+    # Extract common sections using simple heuristics
+    prog_langs = extract_section(r'Programming Languages:\s*([^*]*)', resume)
+    ml_skills = extract_section(r'Machine learning[:\-]*\s*([^*]*)', resume)
+    db_viz = extract_section(r'Database(?:s)?(?: & Visualization)?[:\-]*\s*([^*]*)', resume)
+    other_tools = extract_section(r'Others[:\-]*\s*([^*]*)', resume)
+    education = extract_section(r'Education Details\s*[:\-]*\s*(.*?)(?=\s*Company Details|\s*Experience|\s*Skill Details|\s*$)', resume)
+    job_title = extract_section(r'(?:Job\s+Title|Position)[:\-]*\s*(.*?)(?=\s*Company|\s*$)', resume)
+    company = extract_section(r'Company[:\-]*\s*(.*?)(?=\s*Description|\s*$)', resume)
+    job_desc = extract_section(r'Description[:\-]*\s*(.*?)(?=\s*Tools|$)', resume)
+    tools = extract_section(r'Tools & Technologies[:\-]*\s*(.*)', resume)
+
+    cleaned_data.append({
+        "Category": category,
+        "Programming Languages": prog_langs,
+        "Machine Learning": ml_skills,
+        "Databases & Visualization": db_viz,
+        "Other Tools": other_tools,
+        "Education": education,
+        "Job Title": job_title,
+        "Company": company,
+        "Job Description": job_desc,
+        "Tools & Technologies": tools,
+    })
+
+# Create a cleaned DataFrame
+df_cleaned = pd.DataFrame(cleaned_data)
+
+# Save to CSV
+output_path = "datasets/processed_data/Cleaned_Resume_DataSet.csv"
+df_cleaned.to_csv(output_path, index=False)
+
+output_path
