@@ -1,0 +1,36 @@
+import pandas as pd
+import sentence_transformers
+
+resumes = pd.read_csv("datasets/processed_data/plain_resume.csv")
+jobs = pd.read_csv("datasets/processed_data/cleaned_job_data.csv")
+outcomes = pd.read_csv("datasets/processed_data/cleaned_recruitment_data.csv")
+
+resumes = resumes.reset_index(drop=True)
+outcomes = outcomes.reset_index(drop=True)
+merged = pd.concat([resumes, outcomes], axis=1)
+
+from sentence_transformers import SentenceTransformer
+
+model = SentenceTransformer('all-MiniLM-L6-v2')
+merged["resume_embedding"] = merged["Resume"].apply(lambda x: model.encode(str(x)))
+
+
+from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
+
+X = merged[["ExperienceYears", "InterviewScore", "SkillScore", "PersonalityScore"]]  # + more if you want
+y = merged["HiringDecision"]
+
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+clf = RandomForestClassifier()
+clf.fit(X_train, y_train)
+
+print(classification_report(y_test, clf.predict(X_test)))
+
+
+import shap
+explainer = shap.Explainer(clf, X_test)
+shap_values = explainer(X_test)
+
+shap.summary_plot(shap_values, X_test)
