@@ -58,6 +58,7 @@ print(df.head())
 df.to_csv("datasets/processed_data/cleaned_job_data.csv", index=False)
 
 
+# Cleaning UpdatedResumeDataSet.csv
 def clean_text(text):
     """Fix encoding issues and normalize whitespace."""
     text = text.encode('latin1').decode('utf-8', errors='ignore')
