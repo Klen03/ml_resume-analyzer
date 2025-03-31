@@ -5,7 +5,7 @@ from sklearn.metrics import classification_report
 import pandas as pd
 
 # Load your cleaned dataset
-df = pd.read_csv("cleaned_updated_resume_dataset.csv")
+df = pd.read_csv("datasets/processed_data/cleaned_updated_resume_dataset.csv")
 X = df["Resume"].fillna("")
 y = df["Category"]
 
