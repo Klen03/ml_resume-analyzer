@@ -1,13 +1,10 @@
+# Import modeling tools
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score, classification_report
 import pandas as pd
-import os
-import numpy as np
-from sentence_transformers import SentenceTransformer
 
-# Load cleaned dataset
 df_cleaned = pd.read_csv("datasets/processed_data/cleaned_updated_resume_dataset.csv")
 
 # Define features and target
@@ -34,27 +31,3 @@ accuracy = accuracy_score(y_test, y_pred)
 report = classification_report(y_test, y_pred, output_dict=True)
 
 accuracy, report
-
-# Convert classification report to a DataFrame and save as CSV
-report_df = pd.DataFrame(report).transpose()
-
-# Save to CSV
-report_csv_path = "datasets/results/updated_resume_classification_report_.csv"
-report_df.to_csv(report_csv_path, index=True)
-
-report_csv_path
-
-# Load BERT model for sentence embeddings
-model = SentenceTransformer('all-MiniLM-L6-v2')
-
-# Embed the resumes
-X_train_emb = model.encode(X_train.tolist(), show_progress_bar=True)
-X_test_emb = model.encode(X_test.tolist(), show_process_bar=True)
-
-# Train a classifier
-clf = LogisticRegression(max_iter=1000)
-clf.fit(X_train_emb, y_train)
-
-# Evaluate
-y_pred = clf.predict(X_test_emb)
-print(classification_report(y_test, y_pred))

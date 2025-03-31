@@ -77,7 +77,7 @@ def extract_section(pattern, text):
 # Prepare cleaned data storage
 cleaned_data = []
 
-df = pd.read_csv("datasets/raw_data/UpdatedResumeDataSet.csv", encoding='utf-8-sig')
+df = pd.read_csv("datasets/processed_data/cleaned_updated_resume_data.csv", encoding='utf-8-sig')
 
 df['Resume'] = df['Resume'].fillna('').astype(str)
 

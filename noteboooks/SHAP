@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-X = merged[["ExperienceYears", "InterviewScore", "SkillScore", "PersonalityScore"]] 
+X = merged[["ExperienceYears", "InterviewScore", "SkillScore", "PersonalityScore"]]  # + more if you want
 y = merged["HiringDecision"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -38,9 +38,12 @@ shap.summary_plot(shap_values, X_test)
 import matplotlib.pyplot as plt
 import os
 
+# Create the folder if it doesn't exist
+os.makedirs("figures", exist_ok=True)
 
-shap.summary_plot(shap_values, X_test, show=False) 
+# ✅ Force SHAP to use Matplotlib (not JS rendering)
+shap.summary_plot(shap_values, X_test, show=False)  # show=False = don't auto-display
 
-plt.savefig("datasests/visual _images/shap_experience_plot.png", dpi=300, bbox_inches="tight")
+# ✅ Now this WILL grab the right SHAP figure
+plt.savefig("figures/shap_experience_plot.png", dpi=300, bbox_inches="tight")
 plt.close()
-
