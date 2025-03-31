@@ -19,7 +19,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report
 
-X = merged[["ExperienceYears", "InterviewScore", "SkillScore", "PersonalityScore"]]  # + more if you want
+X = merged[["ExperienceYears", "InterviewScore", "SkillScore", "PersonalityScore"]] 
 y = merged["HiringDecision"]
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
@@ -33,22 +33,14 @@ import shap
 explainer = shap.Explainer(clf, X_test)
 shap_values = explainer(X_test)
 
-#shap.summary_plot(shap_values, X_test)
+shap.summary_plot(shap_values, X_test)
 
 import matplotlib.pyplot as plt
 import os
 
 
-shap.summary_plot(shap_values, X_test, show=False)  # show=False = don't auto-display
+shap.summary_plot(shap_values, X_test, show=False) 
 
-#plt.savefig("figures/shap_experience_plot.png", dpi=300, bbox_inches="tight")
-#plt.close()
-
-# Use SHAP values for class 1 (hired)
-shap.dependence_plot(
-    "ExperienceYears", 
-    shap_values.values[:, 1],  # only class 1
-    X_test,
-    feature_names=X_test.columns
-)
+plt.savefig("datasests/visual _images/shap_experience_plot.png", dpi=300, bbox_inches="tight")
+plt.close()
 
