@@ -33,17 +33,22 @@ import shap
 explainer = shap.Explainer(clf, X_test)
 shap_values = explainer(X_test)
 
-shap.summary_plot(shap_values, X_test)
+#shap.summary_plot(shap_values, X_test)
 
 import matplotlib.pyplot as plt
 import os
 
-# Create the folder if it doesn't exist
-os.makedirs("figures", exist_ok=True)
 
-# ✅ Force SHAP to use Matplotlib (not JS rendering)
 shap.summary_plot(shap_values, X_test, show=False)  # show=False = don't auto-display
 
-# ✅ Now this WILL grab the right SHAP figure
-plt.savefig("figures/shap_experience_plot.png", dpi=300, bbox_inches="tight")
-plt.close()
+#plt.savefig("figures/shap_experience_plot.png", dpi=300, bbox_inches="tight")
+#plt.close()
+
+# Use SHAP values for class 1 (hired)
+shap.dependence_plot(
+    "ExperienceYears", 
+    shap_values.values[:, 1],  # only class 1
+    X_test,
+    feature_names=X_test.columns
+)
+
