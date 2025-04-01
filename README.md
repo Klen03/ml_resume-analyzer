@@ -31,21 +31,65 @@ Unlike existing AI resume tools that only provide text-based feedback, our tool 
 This approach makes our project uniquely valuable by focusing on data-driven insights rather than just text-based resume feedback.
   
 ## Data:
-- Resumes from public resume library/ database (e.g., Kaggle, Resume.io, OpenResume)
-  - Method: Scraping public resume datasets or collecting resumes from willing participants (e.g., students, professionals)
-- Job descriptions from job websites (e.g. LinkedIn, Indeed, Glassdoor, Handshake)
-  - Method: Scraping job descriptions or using job board APIs
-- Dataset that includes hiring outcomes (e.g., research papers, HR datasets, or self-collected surveys)
-  - Method: Survey students/professionals on their job applications and outcomes  
+Resumes: Public datasets (e.g., Kaggle, Resume.io) and optional participant submissions
 
+Job Descriptions: Scraped from LinkedIn, Glassdoor, Handshake, etc., or via job board APIs
+
+Hiring Outcomes: Existing HR/recruitment datasets or anonymized records from career centers
 ## Data Model:
 - BERT embedding to extract meaningful text features from resumes and job descriptions
 - Logistic regression (job offer prediction to classify resumes as “likely to get an offer” vs. “unlikely)
-## Data Visualization: 
-- Radar chart to visualize strengths and weaknesses of resumes based on key metrics such as skill match, experience, education, etc.
-- Scatter plots to show feature importance vs. job offer probability
-## Testing: 
-- Unit test to verify correct feature extraction
-- Dataset split, 20% for testing and 80% for training
-- Use past records of resumes, job descriptions, and hiring outcomes to train data
+## Data Insights & Visualizations
+
+- Word Clouds: Highlight most frequently used skills and keywords across resume categories
+
+- Category Distribution: Visual breakdown of resume categories (e.g., Data Scientist, HR, Developer)
+
+- Market Expectations:
+
+  - Compare experience requirements across job types
+
+  - Identify top in-demand skills per role
+
+- SHAP Summary Plots: Show which features most affect hiring predictions
+
+- Dependence & Waterfall Plots: Explain individual predictions and feature interactions
+
+
+## Modeling Pipeline: 
+
+1. Preprocessing
+
+  - Resume text consolidation into a single feature field
+
+  - Cleaning and normalization of job descriptions and outcomes
+
+2. Feature Extraction
+
+  - TF-IDF for baseline model
+
+  - BERT embeddings using sentence-transformers for semantic matching
+
+3. Model Training
+
+  - Baseline Logistic Regression with TF-IDF
+
+  - Advanced model using BERT + Logistic Regression or Random Forest
+
+  - SHAP integration for model interpretability
+
+4. Evaluation Metrics
+
+  - Precision, Recall, F1-Score, and Accuracy
+
+  - Special focus on hired (positive) class performance
+
+## Preliminary Results
+
+- Baseline model using TF-IDF achieved high classification accuracy (~99%) across resume categories
+
+- Initial classifier for hiring decision prediction achieved ~70% accuracy, but with low recall on the hired class, suggesting class imbalance and the need for deeper feature modeling
+
+- SHAP analysis on ExperienceYears showed expected trends (e.g., more experience increased hire likelihood), but also prompted further investigation into less obvious patterns and biases
+
 
