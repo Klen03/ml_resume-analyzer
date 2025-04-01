@@ -91,3 +91,31 @@ plt.xlabel('Minimum Experience (Years)')
 plt.ylabel('Number of Skills Listed')
 plt.tight_layout()
 plt.show()
+
+
+#8 Top 3 Skills Required for Top 10 Job Roles
+top_roles = df['Role'].value_counts().head(10).index.tolist()
+role_skills = df[df['Role'].isin(top_roles)].explode('Key Skills')
+role_skills['Key Skills'] = role_skills['Key Skills'].str.strip().str.lower()
+
+top_skills_per_role = (
+    role_skills.groupby('Role')['Key Skills']
+    .apply(lambda x: x.value_counts().head(3))
+    .reset_index()
+    .rename(columns={'level_1': 'Skill', 'Key Skills': 'Count'})
+)
+plt.figure(figsize=(14, 10))
+sns.barplot(
+    data=top_skills_per_role,
+    x='Count',
+    y='Role',
+    hue='Skill',
+    palette='tab20',
+    dodge=False
+)
+plt.title('Top 3 Skills Required for Top 10 Job Roles')
+plt.xlabel('Frequency')
+plt.ylabel('Job Role')
+plt.legend(bbox_to_anchor=(1.05, 1), loc='upper left')
+plt.tight_layout()
+plt.show()
