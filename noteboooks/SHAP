@@ -45,6 +45,5 @@ os.makedirs("figures", exist_ok=True)
 # ✅ Force SHAP to use Matplotlib (not JS rendering)
 shap.summary_plot(shap_values, X_test, show=False)  # show=False = don't auto-display
 
-# ✅ Now this WILL grab the right SHAP figure
-plt.savefig("figures/shap_experience_plot.png", dpi=300, bbox_inches="tight")
+plt.savefig("datasests/visual _images/shap_experience_plot.png", dpi=300, bbox_inches="tight")
 plt.close()
