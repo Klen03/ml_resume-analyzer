@@ -1,11 +1,12 @@
 import pandas as pd
 import sentence_transformers
 
+
 resumes = pd.read_csv("datasets/processed_data/plain_resume.csv")
-jobs = pd.read_csv("datasets/processed_data/cleaned_job_data.csv")
+# jobs = pd.read_csv("datasets/processed_data/cleaned_job_data.csv")
 outcomes = pd.read_csv("datasets/processed_data/cleaned_recruitment_data.csv")
 
-resumes = resumes.reset_index(drop=True)
+# resumes = resumes.reset_index(drop=True)
 outcomes = outcomes.reset_index(drop=True)
 merged = pd.concat([resumes, outcomes], axis=1)
 

@@ -2,7 +2,7 @@
 from collections import Counter
 from matplotlib import pyplot as plt
 import pandas as pd
-from cleaning import clean_text
+from noteboooks.data_cleaning.cleaning import clean_text
 
 # Cleaning recruitment_data.csv
 df = pd.read_csv("datasets/processed_data/cleaned_updated_resume_dataset.csv")
