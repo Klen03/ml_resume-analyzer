@@ -444,7 +444,15 @@ Building on this, the next notebook will explore subsets of the data, for exampl
 \
 
 
-**“Subset creation and analysis Ivan.ipynb”** : this is the file where we create subsets of the dataset and perform SHAP analysis on each of the subsets
+**“Subset creation and analysis Ivan.ipynb”** : 
+
+**All the visualizations generated in this file can also be found via this path:**
+
+**datasets/visuals\_images/subset analysis visualization**
+
+**They are in the “.ipynb” file as well.**
+
+This is the file where we create subsets of the dataset and perform SHAP analysis on each of the subsets.
 
 File relative path: noteboooks/subset creation and analysis Ivan.ipynb
 
