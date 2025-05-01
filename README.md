@@ -8,7 +8,7 @@ Our project reimagines resume analysis by shifting focus from vague AI suggestio
 
 ## Project Description:
 
-By using \*\*Natural Language Processing (NLP), machine learning models, and statistical analysis\*\*, the project aims to create an actionable and ethical tool that helps job seekers \*\*optimize their resumes\*\* while also understanding \*\*what actually matters in hiring decisions\*\* and addressing \*\*potential biases in the hiring process.\*\*
+By using **Natural Language Processing (NLP), machine learning models, and statistical analysis**, the project aims to create an actionable and ethical tool that helps job seekers **optimize their resumes** while also understanding **what actually matters in hiring decisions** and addressing **potential biases in the hiring process.**
 
 ## 1. Data Selection and Cleaning
 
