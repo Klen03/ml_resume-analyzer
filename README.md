@@ -10,7 +10,7 @@ Our project reimagines resume analysis by shifting focus from vague AI suggestio
 
 By using \*\*Natural Language Processing (NLP), machine learning models, and statistical analysis\*\*, the project aims to create an actionable and ethical tool that helps job seekers \*\*optimize their resumes\*\* while also understanding \*\*what actually matters in hiring decisions\*\* and addressing \*\*potential biases in the hiring process.\*\*
 
-**1, data selection and cleaning**
+**1. Data selection and cleaning**
 
 All the data are stored in csv form, and could be found under the dataset folder.
 
@@ -76,7 +76,7 @@ dataset/processed\_data:
 
 Every Files under this path will be explained in part 3, in “Subset creation and analysis Ivan.ipynb”
 
-**2, statistical analysis and data visualization**
+**2. Statistical analysis and data visualization**
 
 **_All the files that are addressed in this part can be found under the file called ‘notebooks’:_**
 
