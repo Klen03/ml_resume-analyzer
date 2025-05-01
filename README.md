@@ -605,7 +605,7 @@ datasets/processed\_data/keywords/industry\_top\_skill\_keywords.csv
 
  • Offers targeted recommendations on which skills or terms to consider adding. 
 
-How to run: 
+# How to run: 
 
 1\. Place your resume.txt in datasets/user\_resume/ and update its path in cell 
 
