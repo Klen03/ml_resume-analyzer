@@ -6,11 +6,11 @@ Our project reimagines resume analysis by shifting focus from vague AI suggestio
 
 ### FINAL REPORT PRESENTATION: 
 
-## Project description:
+## Project Description:
 
 By using \*\*Natural Language Processing (NLP), machine learning models, and statistical analysis\*\*, the project aims to create an actionable and ethical tool that helps job seekers \*\*optimize their resumes\*\* while also understanding \*\*what actually matters in hiring decisions\*\* and addressing \*\*potential biases in the hiring process.\*\*
 
-**1. Data selection and cleaning**
+## 1. Data Selection and Cleaning
 
 All the data are stored in csv form, and could be found under the dataset folder.
 
@@ -76,7 +76,7 @@ dataset/processed\_data:
 
 Every Files under this path will be explained in part 3, in “Subset creation and analysis Ivan.ipynb”
 
-**2. Statistical analysis and data visualization**
+## 2. Statistical Analysis and Data Visualization
 
 **_All the files that are addressed in this part can be found under the file called ‘notebooks’:_**
 
@@ -374,7 +374,7 @@ To get all the word-cloud visualization images, run every cell sequentially.  
 
 ********
 
-**3, data modeling and SHAP analysis**
+## 3. Data Modeling and SHAP Analysis
 
 All the following files are under the file of notebooks:
 
@@ -557,7 +557,7 @@ However, SHAP reveals the true average contribution order is InterviewScore, Per
 
 Again, gender doesn’t have a big influence on the result.
 
-**4, application - user resume analysis**
+## 4. Application - user resume analysis
 
 This part  contains a single notebook:
 
@@ -565,25 +565,25 @@ This part  contains a single notebook:
 
 It automates a two-fold evaluation of your resume—semantic alignment and keyword coverage—against industry data. 
 
-1\. Category Matching 
+**1. Category Matching**
 
 • Prompts you to enter your desired role (e.g. “Software Engineer”, “Data Scientist”, “UX Designer”). 
 
 • Uses a BERT-based encoder to find the closest match among three system datasets: job descriptions, peer resumes, and skill requirements.
 
- 2. Resume Ingestion 
+**2. Resume Ingestion** 
 
 • Reads your resume.txt from datasets/user\_resume/. 
 
 • Tokenizes and embeds your full text for downstream analysis. 
 
-3\. Semantic Similarity Scoring 
+**3. Semantic Similarity Scoring** 
 
 • Aggregates all job descriptions in the matched category and computes a cosine similarity score between this combined text embedding and your resume embedding. 
 
 • Repeats the process for the collection of peer resumes to gauge how your profile aligns with industry standards. 
 
-4\. Keyword Gap Analysis 
+**4. Keyword Gap Analysis** 
 
 • Loads pre-computed top keywords (with frequencies) from: 
 
@@ -597,7 +597,7 @@ datasets/processed\_data/keywords/industry\_top\_skill\_keywords.csv
 
 • Highlights “key keywords” that are absent across multiple categories as priority areas to strengthen. 
 
-5\. Report Generation 
+**5. Report Generation** 
 
 • Prints concise similarity scores for both job descriptions and peer resumes. 
 
@@ -605,7 +605,7 @@ datasets/processed\_data/keywords/industry\_top\_skill\_keywords.csv
 
  • Offers targeted recommendations on which skills or terms to consider adding. 
 
-# How to run: 
+**How to run:** 
 
 1\. Place your resume.txt in datasets/user\_resume/ and update its path in cell 
 
