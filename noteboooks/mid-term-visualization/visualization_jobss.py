@@ -7,7 +7,7 @@ import os
 
 sns.set_style('whitegrid')
 plt.rcParams['figure.figsize'] = (12, 6)
-file_path = os.path.expanduser('~/Downloads/jobss_cleaned.csv')
+file_path = os.path.expanduser('datasets/processed_data/jobss_cleaned.csv')
 df = pd.read_csv(file_path)
 
 
