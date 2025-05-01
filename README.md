@@ -1,12 +1,12 @@
-\# CS506 Project - Hiring Intelligence Dashboard
+# CS506 Project - Hiring Intelligence Dashboard
 
 Our project reimagines resume analysis by shifting focus from vague AI suggestions to data-driven insights based on real hiring outcomes. Rather than trying to predict job offers directly, we analyze which resume traits most strongly correlate with success—using actual recruitment data, SHAP interpretability, and behavioral scoring. Our tool empowers job seekers not just with feedback, but with explanations and comparisons, allowing them to simulate changes, view trait benchmarks against successful applicants, and identify potential bias or inequality in the hiring process. We aim to move beyond generative feedback and toward transparent, evidence-backed recommendations. This provides applicants with quantifiable and context-aware recommendations. 
 
-\### MIDTERM REPORT PRESENTATION: <https://youtu.be/dAWN00tTHm4>
+### MIDTERM REPORT PRESENTATION: <https://youtu.be/dAWN00tTHm4>
 
-\### FINAL REPORT PRESENTATION: 
+### FINAL REPORT PRESENTATION: 
 
-\## Project description:
+## Project description:
 
 By using \*\*Natural Language Processing (NLP), machine learning models, and statistical analysis\*\*, the project aims to create an actionable and ethical tool that helps job seekers \*\*optimize their resumes\*\* while also understanding \*\*what actually matters in hiring decisions\*\* and addressing \*\*potential biases in the hiring process.\*\*
 
