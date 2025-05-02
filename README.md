@@ -4,7 +4,7 @@ Our project reimagines resume analysis by shifting focus from vague AI suggestio
 
 ### MIDTERM REPORT PRESENTATION: <https://youtu.be/dAWN00tTHm4>
 
-### FINAL REPORT PRESENTATION: 
+### FINAL REPORT PRESENTATION: <https://youtu.be/Rb1JCAtc1EQ>
 
 ## Project Description:
 
