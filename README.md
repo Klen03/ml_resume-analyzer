@@ -11,70 +11,57 @@ Our project reimagines resume analysis by shifting focus from vague AI suggestio
 By using **Natural Language Processing (NLP), machine learning models, and statistical analysis**, the project aims to create an actionable and ethical tool that helps job seekers **optimize their resumes** while also understanding **what actually matters in hiring decisions** and addressing **potential biases in the hiring process.**
 
 ## 1. Data Selection and Cleaning
+All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
-All the data are stored in csv form, and could be found under the dataset folder.
+### Raw Datasets
 
-dataset/raw\_data:
+#### `job_data.csv`
+- **Source**: [Kaggle - Job Descriptions](https://www.kaggle.com/datasets/marcocavaco/scraped-job-descriptions)
+- **Contents**: Job descriptions and categories  
+- **Usage**: Generate BERT embeddings to compare with user resume embeddings.
 
-‘job\_data.csv’: 
+#### `jobss.csv`
+- **Source**: [Kaggle - Predicting Job Titles](https://www.kaggle.com/datasets/thedevastator/predicting-job-titles-from-resumes/data)
+- **Contents**: Job titles, categories, and required skills  
+- **Usage**: Identify high-frequency skills missing from user resumes.
 
-<https://www.kaggle.com/datasets/marcocavaco/scraped-job-descriptions>
+#### `Recruitment_data.csv`
+- **Source**: [Kaggle - Hiring Decisions](https://www.kaggle.com/datasets/rabieelkharoua/predicting-hiring-decisions-in-recruitment-data)
+- **Contents**: Applicant features and hiring outcomes  
+- **Usage**: Train a LightGBM model and apply SHAP to interpret hiring decisions.
 
-**Contents:** Individual job descriptions and their assigned categories\
-**Usage:** Generate BERT embeddings for each description and compare them to the user’s resume embedding to assess semantic alignment.
+#### `Resume_data.csv`
+- **Source**: [Kaggle - Resume Dataset](https://www.kaggle.com/datasets/saugataroyarghya/resume-dataset)
+- **Contents**: Structured resume information (skills, schools, timestamps)  
+- **Usage**: Visualize applicant demographics and qualifications.
 
-‘jobss.csv’:
+#### `Resume.csv`
+- **Contents**: Plain-text resumes and their associated categories  
+- **Usage**: Extract top keywords and generate embeddings for peer comparison.
 
-<https://www.kaggle.com/datasets/thedevastator/predicting-job-titles-from-resumes/data>
 
-**Contents:** Job titles, categories, and the corresponding lists of required skills\
-**Usage:** Identify which high-frequency skills are missing from the user’s resume.
+---
 
-‘Recruitment\_data.csv’:
+### Processed Datasets (`dataset/processed_data/`)
+- `Cleaned_job_data.csv`: Cleaned version of `job_data.csv`
+- `Jobss_cleaned.csv`: Cleaned version of `jobss.csv`
+- `Plain_resume.csv`: Cleaned version of `Resume.csv`
+- `Cleaned_recruitment_data.csv`: Cleaned version of `Recruitment_data.csv`
+- `Encoded_cleaned_recruitment_data.csv`: Categoricals encoded for modeling
+- `Cleaned_updated_resume_data.csv`: Cleaned version of `Resume_data.csv`
 
-<https://www.kaggle.com/datasets/rabieelkharoua/predicting-hiring-decisions-in-recruitment-data>
+---
 
-**Contents:** Applicant features (e.g. education level, referral status) plus a binary hiring outcome
+### Keyword Files (`/keywords/`)
+- `Cleaned_jobdata_keyword_freq.csv`: Top 50 keywords by job category (from `extract_jd_keywords.ipynb`)
+- `Industry_top_skill_keywords.csv`: Top 50 skills per job category (from `extract_keywordOfSkills_in_jobss_cleaned.ipynb`)
+- `Plain_resume_keyword_freq.csv`: Top 50 resume keywords per category (from `extract_keyword_plain_resume.ipynb`)
 
-**Usage:** Train a LightGBM model and apply SHAP to determine which applicant attributes most strongly drive hiring decisions.
+---
 
-‘Resume\_data.csv’
-
-<https://www.kaggle.com/datasets/saugataroyarghya/resume-dataset>
-
-**Contents:** Structured applicant data—skill sets, educational institutions, timestamps, etc.—but no hiring outcomes\
-**Usage:** Produce exploratory visualizations of applicant demographics and qualifications.
-
-‘Resume.csv’
-
-**Contents:** Plain-text resumes and their associated categories\
-**Usage:** Extract top keyword lists and compute BERT embeddings to compare peer resumes with the user’s own.
-
-dataset/processed\_data:
-
-‘Cleaned\_job\_data.csv’: cleaned version of ‘job\_data.csv’
-
-‘Cleaned\_recruitment\_data.csv’: cleaned version of ‘recruitment\_data.csv’
-
-‘Cleaned\_updated\_resume\_data.csv’: cleaned version of ‘resume\_data.csv’
-
-‘Encoded\_cleaned\_recruitment\_data.csv’:cleaner version of ‘recruitment\_data.csv’ (cleaners just means all categorical columns are encoded into numerical)
-
-‘Jobss\_cleaned.csv’: cleaned version of ‘jobss.csv’
-
-‘Plain\_resume.csv’: cleaned version of ‘resume.csv’
-
-/keywords:
-
-‘Cleaned\_jobdata\_keyword\_freq.csv’: stores the top 50 keywords of job description in each category’. Run all cells in “noteboooks/keyword\_extract/extract\_jd\_keywords.ipynb” to get this csv
-
-‘Industry\_top\_skill\_keywords.csv’: stores the top 50 key skills in each category. Run all cells in “noteboooks/keyword\_extract/extract\_keywordOfSkills\_in\_jobss\_cleaned.ipynb” to get this csv
-
-‘Plain\_resume\_keyword\_freq.csv’: stored the top 50 key skills of resumes in every category. Run all cells in “noteboooks/keyword\_extract/extract\_keyword\_plain\_resume.ipynb” to get this csv
-
-/subsets\_by\_gender 
-
-Every Files under this path will be explained in part 3, in “Subset creation and analysis Ivan.ipynb”
+### Gender Subsets (`/subsets_by_gender/`)
+- Subsets used for SHAP analysis in Part 3  
+- Explained in `Subset creation and analysis Ivan.ipynb`
 
 ## 2. Statistical Analysis and Data Visualization
 
