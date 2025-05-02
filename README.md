@@ -65,17 +65,16 @@ All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
 ## 2. Statistical Analysis and Data Visualization
 
-**_All the files that are addressed in this part can be found under the file called ‘notebooks’:_**
+All the files that are addressed in this part can be found under the file called ‘notebooks’:
 
 **File 1 - Directory: final\_visualization/encoded\_cleaned\_recrutment.ipynb:** 
 
 **To get the following images, run each cell of the ipynb file sequentially.**
 
-1. **Scatter Plot: SkillScore vs. InterviewScore by Hiring Decision:**
-
-- _Purpose:_ To visually explore how skill and interview scores influence hiring decisions.
-
-* _Explanation:_ Each point represents a candidate, with their SkillScore on the x-axis and InterviewScore on the y-axis. Circles represent candidates who were hired, while X’s represent those who were not. This plot reveals clusters and thresholds associated with success.
+#### Scatter Plot: SkillScore vs. InterviewScore by Hiring Decision
+- **Purpose**: Visualize how skill and interview scores affect hiring decisions.
+- **Insight**: Hired candidates tend to cluster in the upper-right quadrant, showing high values in both scores.
+- **Explanation**: Each point represents a candidate, with their SkillScore on the x-axis and InterviewScore on the y-axis. Circles represent candidates who were hired, while X’s represent those who were not. This plot reveals clusters and thresholds associated with success.
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXd8AXzcDDEopBFXc5i0ptISzFxu26dTKn0xJS5nJwsO-enavgi3DMadYVQd9dK2zJFu5oSzvdL5YTejB3hwYnOYQzTWqM9jZ7yoYqDT6xuqtRYzfYbfuCNcfn37k1NUo7lbkuj3?key=AydKl4-5KABXmLdy7Lo3PixK)
 
@@ -89,13 +88,13 @@ All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
 * _Implication for Analysis:_ This plot suggests that SkillScore and InterviewScore are strong indicators of hiring likelihood, especially when both are above \~70.
 
-2. **Boxplot of PersonalityScore by EducationLevel:**
-
-- _Purpose:_ To analyze how personality ratings differ by educational background.
+#### Boxplot of PersonalityScore by EducationLevel
+- **Purpose**: Analyze variance in personality scores across education backgrounds.
+- **Insight**: PhD and Master’s holders show higher and more consistent scores than Bachelor and High School levels.
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcLAk9r2jEF02h_7IpESWbn2PQolqXFeHztVNfXp3M6AlxtcMfEMHZz32jk39wlCHvDNJgfBsMIbmDID0HB_6JBgdJ_LWDK7vgZbJxbGaxNFF7euhF3SI_9-TOf-gJPln9NWWsb?key=AydKl4-5KABXmLdy7Lo3PixK)
 
-- _Explanation:_ This box plot shows the distribution of PersonalityScore across EducationLevel groups (e.g. High School, Bachelor, Master, PhD). It includes medians, quartiles, and outliers, highlighting consistency and variability.
+- **Explanation**:_ This box plot shows the distribution of PersonalityScore across EducationLevel groups (e.g. High School, Bachelor, Master, PhD). It includes medians, quartiles, and outliers, highlighting consistency and variability.
 
 * _Key Takeaways:_
 
@@ -107,13 +106,13 @@ All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
 - _Implication for Analysis:_ This plot supports the hypothesis that higher education may correlate with stronger interpersonal traits, though variability within lower education levels suggests that strong personalities can emerge from all backgrounds.
 
-3. **Bar Chart of Hiring Rate by RecruitmentStrategy and Education Level:**
-
-- _Purpose:_ To evaluate the effectiveness of different recruitment strategies across education levels.
+#### Bar Chart: Hiring Rate by Recruitment Strategy and Education Level
+- **Purpose**: Evaluate how recruitment method impacts hiring success across different education levels.
+- **Insight**: Referrals consistently result in the highest hiring rates.
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXcnxBprKMHWIOtHuxtucft-KUHHnhG_8Fi_G63w8gPdZTKDn5MIQMZcdwPHpY82BVtR5qeafDKxjv0T1HHj_ae0byxNYHGC4cJzfGDgJyBG814-b9BWbUt53nxE02X7bvj4C9L0HQ?key=AydKl4-5KABXmLdy7Lo3PixK)
 
-- _Explanation:_ This grouped bar chart shows the percentage of candidates hired for each RecruitmentStrategy (Referral, Online, Agency), with separate bars for each EducationLevel. It reveals how strategy and education intersect to influence hiring success.
+- **Explanation**:_ This grouped bar chart shows the percentage of candidates hired for each RecruitmentStrategy (Referral, Online, Agency), with separate bars for each EducationLevel. It reveals how strategy and education intersect to influence hiring success.
 
 * _Key Takeaways:_
 
@@ -125,11 +124,10 @@ All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
 - _Implication for Analysis:_ Referral programs yield higher success rates should be prioritized for sourcing candidates, especially for mid-to-senior roles.
 
-4. **Parallel Coordinates Plot: Hired vs. Not Hired Profiles:**
-
-- _Purpose:_ To compare multivariate candidate profiles between hired and not-hired groups.
-
-* _Explanation:_ Each line represents a candidate’s normalized values across four metrics: InterviewScore, SkillScore, PersonalityScore, and ExperienceYears. Lines are color-coded by hiring outcome. This allows you to visually trace what makes a “typical” hired candidate different from a successful one.
+#### Parallel Coordinates Plot: Hired vs. Not Hired Profiles
+- **Purpose**: Compare multivariate candidate profiles across InterviewScore, SkillScore, PersonalityScore, and ExperienceYears.
+- **Insight**: Hired candidates have stronger metrics overall, especially in InterviewScore and SkillScore.
+- **Explanation**:_ Each line represents a candidate’s normalized values across four metrics: InterviewScore, SkillScore, PersonalityScore, and ExperienceYears. Lines are color-coded by hiring outcome. This allows you to visually trace what makes a “typical” hired candidate different from a successful one.
 
 ![](https://lh7-rt.googleusercontent.com/docsz/AD_4nXeZ1oNREhXFDN2-f5PPVGYsxqd6o6IWQiTPN08XSL3zZ6PdiwPfgsGXXSHk5AGe1tTXeSsZtgv5fR4RgIY2NUorvOt2603JhxXdpqYIBluw6MmOOiZ3RnlLx64_gpZ7nIV7ObpthQ?key=AydKl4-5KABXmLdy7Lo3PixK)
 
@@ -147,7 +145,7 @@ All raw data is stored in `.csv` format under the `dataset/raw_data/` directory.
 
 **To get the visualization, run this .py file, and the result will be under ‘datasets/visuals\_images’**
 
-**Resume Keyword Frequency Analysis:**
+#### Resume Keyword Frequency Analysis
 
 As part of our data exploration, we conducted a keyword frequency analysis on the raw resume text. We used a custom keyword list to identify how often programming languages and machine learning (ML) concepts appeared across all candidates’ resumes. This analysis helped us understand the technical depth and focus areas in the applicant pool.
 
